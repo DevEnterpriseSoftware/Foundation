@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\common.props"></Import>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>DevEnterprise.Foundation.Caching</AssemblyName>
+    <RootNamespace>DevEnterprise.Foundation.Caching</RootNamespace>
+    <Description>This caching library provides a hybrid memory and distributed cache mechanism over the standard IMemoryCache and IDistributedCache interfaces. Cached items are stored in memory for fast access uses a distributed backplane for longer term caching and to share across multiple clients. This caching library is also a Polly cache provider so can be used in cache policy configuration.</Description>
+    <AssemblyVersion>0.0.2.0</AssemblyVersion>
+    <FileVersion>0.0.2.0</FileVersion>
+    <Version>0.0.2</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RepositoryUrl>https://github.com/DevEnterpriseSoftware/Foundation</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/DevEnterpriseSoftware/Foundation</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>Distributed, Cache, Redis, SQL Server</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevEnterprise.Foundation" Version="0.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Caching.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="3.1.1" />
+    <PackageReference Include="System.Text.Json" Version="4.7.0" />
+  </ItemGroup>
+
+</Project>
